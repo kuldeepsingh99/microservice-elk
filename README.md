@@ -57,7 +57,10 @@ We will use Docker container to run the ELK Stack
 2. Checking with docker ps command, all their container should be running
 ![alt text](https://github.com/kuldeepsingh99/microservice-elk/blob/master/images/dockerps.PNG "ELK Stack")
 
-## Creating micro service
+## Creating Micro Service
+
+### Spring Zuul, eureka flow
+![alt text](https://github.com/kuldeepsingh99/microservice-elk/blob/master/images/ZuulFlow.png "Zuul flow")
 
 ### These are the default ports used for the services in this example
 1. **account** :- 8080
