@@ -1,4 +1,4 @@
-# Creating microservice using Spring Cloud, Eureka, Zuul, Sleuth, Zipkin and ELK Stack
+# Creating microservice using Spring Boot, Eureka, Zuul, Sleuth, Zipkin and ELK Stack
 
 Spring framework provides set of libraries for creating microservices in Java.
 
@@ -83,7 +83,7 @@ Run all the services one by one and make sure all the services are running, you 
    * We will get response from Account Service
    
 3. **Checking the log Traces on zipkin server http://localhost:9411/**
-   * here we can check all the log traces, in our example account microservice calls product microservice, so we can check here that which serivice took how much time etc.
+   * here we can check all the log traces, in our example account microservice calls product microservice, so we can check here that which service took how much time etc.
    ![alt text](https://github.com/kuldeepsingh99/microservice-elk/blob/master/images/zipkin.png "Spring Zipkin")
    
 4. **Finally check logs on Kibana**
