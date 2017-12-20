@@ -35,7 +35,7 @@ As the number of microservice increases and we enable cloud deployment with auto
 3. **Kibana** gives the visualization of data through a UI.
 
 ## ELK Stack Architecture
-
+![alt text](https://github.com/kuldeepsingh99/microservice-elk/blob/master/images/elastics.jpg "ELK")
 
 ## ELK Configuration
 
@@ -55,8 +55,43 @@ We will use Docker container to run the ELK Stack
    This command will start Logstash container on 5000 port and it will also create an index with name micro-*
    
 2. Checking with docker ps command, all their container should be running
+![alt text](https://github.com/kuldeepsingh99/microservice-elk/blob/master/images/dockerps.PNG "ELK Stack")
 
 ## Creating micro service
+
+### These are the default ports used for the services in this example
+1. **account** :- 8080
+2. **product** :- 9090
+3. **apigateway** :- 8765
+4. **eureka-service** :- 8761
+5. **zipkin-service** :- 9411
+
+### Download the the services and import it to Eclipse or any Id
+
+Run all the services one by one and make sure all the services are running, you need to run **product** and **account** microservice with multiple ports e.g. spring-boot:run -Dserver.port=8080, spring-boot:run -Dserver.port=8081 
+
+1. **Open the Eureka Service (its running on port 8761)**
+   * Here we observed that two microservice (Account and Product) is registered with different ports
+   ![alt text](https://github.com/kuldeepsingh99/microservice-elk/blob/master/images/eureka.png "Spring Eureka")
+   
+2. **Try to Access to access account service http://localhost:8765/api/account/greeting**
+   * We will get response from Account Service
+   
+3. **Checking the log Traces on zipkin server http://localhost:9411/**
+   * here we can check all the log traces, in our example account microservice calls product microservice, so we can check here that which serivice took how much time etc.
+   ![alt text](https://github.com/kuldeepsingh99/microservice-elk/blob/master/images/zipkin.png "Spring Zipkin")
+   
+4. **Finally check logs on Kibana**
+   * In Kibana we can check every log from our microserivices
+   * with simple **Log.info** statement and **logback.xml** configuration we can index and view log on Kibana
+
+logger.info(" inside getproductdetails  Micro service ");
+
+please check logback.xml (in account and product) for more details
+
+![alt text](https://github.com/kuldeepsingh99/microservice-elk/blob/master/images/kibana.png "Kibana")
+
+
 
 
 
