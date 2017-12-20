@@ -8,7 +8,7 @@ Spring framework provides set of libraries for creating microservices in Java.
 * Zipkin - distributed tracing system with request visualization
 * ELK Stack - We are using Logstash, Elastics Search and Kibana to index logs
 
-## About Projects
+## About the example
 
 1. **account** :- Its a microservice, spring boot and sleuth is used to implement the same
 2. **product** :- its a microservice, spring boot and sleuth is used to implement the same
@@ -41,7 +41,7 @@ As the number of microservice increases and we enable cloud deployment with auto
 
 We will use Docker container to run the ELK Stack
 
-1. Run this command on the docker terminal.
+1. **Run this command on the docker terminal.**
    * docker run -d -it --name es -p 9200:9200 -p 9300:9300 -e ES_JAVA_OPTS="-Xms1g -Xmx1g" -m 1500m elasticsearch
     
     This command will start elastics search container on 9200/9300 port
@@ -54,8 +54,10 @@ We will use Docker container to run the ELK Stack
    
    This command will start Logstash container on 5000 port and it will also create an index with name micro-*
    
-2. Checking with docker ps command, all their container should be running
+2. **Checking with docker ps command, all their container should be running**
 ![alt text](https://github.com/kuldeepsingh99/microservice-elk/blob/master/images/dockerps.PNG "ELK Stack")
+
+3. **Default port used for docker container is 192.168.99.100**
 
 ## Creating Micro Service
 
